@@ -32,7 +32,7 @@ public class Gestor {
         mascotas.add(nueva);
     }
 
-    public void sacarCita(String nombreCitaMascota,String fecha,int hora,String comentarios){
+    public void sacarCita(String nombreCitaMascota, String fecha, String hora, String comentarios){
         Cita nueva = new Cita(nombreCitaMascota, fecha, hora, comentarios);
         citas.add(nueva);
     }

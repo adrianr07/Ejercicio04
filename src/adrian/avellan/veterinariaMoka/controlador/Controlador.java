@@ -1,5 +1,8 @@
 package adrian.avellan.veterinariaMoka.controlador;
 
+import adrian.avellan.veterinariaMoka.bl.entidades.Cita;
+import adrian.avellan.veterinariaMoka.bl.entidades.Mascota;
+import adrian.avellan.veterinariaMoka.bl.entidades.Reservacion;
 import adrian.avellan.veterinariaMoka.bl.entidades.Usuario;
 import adrian.avellan.veterinariaMoka.bl.logica.Gestor;
 import adrian.avellan.veterinariaMoka.ui.UI;
@@ -118,7 +121,7 @@ public class Controlador {
         String fecha = interfaz.leerTexto();
 
         interfaz.imprimirMensaje("Ingrese la hora de la Cita");
-        int hora = Integer.parseInt(interfaz.leerTexto());
+        String hora = interfaz.leerTexto();
 
         interfaz.imprimirMensaje("Comentarios (Para que es la cita)");
         String comentarios = interfaz.leerTexto();
@@ -129,13 +132,13 @@ public class Controlador {
 
     public void registrarReservacion(){
 
-        interfaz.imprimirMensaje("Ingrese el nombre de la Mascota");
+        interfaz.imprimirMensaje("Ingrese el nombre de la Mascota para hacer reservacion");
         String nombreReservaMascota = interfaz.leerTexto();
 
-        interfaz.imprimirMensaje("Ingrese el nombre de la Mascota");
+        interfaz.imprimirMensaje("Ingrese la fecha de entrada");
         String fechaEntrada = interfaz.leerTexto();
 
-        interfaz.imprimirMensaje("Ingrese el nombre de la Mascota");
+        interfaz.imprimirMensaje("Ingrese la fecha de salida");
         String fechaSalida = interfaz.leerTexto();
 
         gestor.hacerReservacion(nombreReservaMascota, fechaEntrada, fechaSalida);
@@ -150,9 +153,27 @@ public class Controlador {
         }
     }
 
-    private void listarMascotas(){}
-    private void listarCitas(){}
-    private void listarReservaciones(){}
+    private void listarMascotas(){
+        ArrayList<Mascota> lista = gestor.listarMascotas();
+        interfaz.imprimirMensaje("Lista de Grupos");
+        for (int i = 0; i < lista.size(); i++) {
+            interfaz.imprimirMensaje(lista.get(i).toString());
+        }
+    }
+    private void listarCitas(){
+        ArrayList<Cita> lista = gestor.listarCitas();
+        interfaz.imprimirMensaje("Lista de Grupos");
+        for (int i = 0; i < lista.size(); i++) {
+            interfaz.imprimirMensaje(lista.get(i).toString());
+        }
+    }
+    private void listarReservaciones(){
+        ArrayList<Reservacion> lista = gestor.listarReservaciones();
+        interfaz.imprimirMensaje("Lista de Grupos");
+        for (int i = 0; i < lista.size(); i++) {
+            interfaz.imprimirMensaje(lista.get(i).toString());
+        }
+    }
 
 
 }

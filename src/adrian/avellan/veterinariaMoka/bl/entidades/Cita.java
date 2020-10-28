@@ -11,7 +11,7 @@ public class Cita {
 
     private String nombreCitaMascota;
     private String fecha;
-    private int hora;
+    private String hora;
     private String comentarios; //para saber apra que es la cita
 
     /**
@@ -54,7 +54,7 @@ public class Cita {
      * @return hora en la que se va a atender a la mascota
      */
 
-    public int getHora() {
+    public String getHora() {
         return hora;
     }
 
@@ -63,7 +63,7 @@ public class Cita {
      * @param hora hora de registro para la cita
      */
 
-    public void setHora(int hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
 
@@ -101,7 +101,7 @@ public class Cita {
      * @param comentarios
      */
 
-    public Cita(String nombreCitaMascota, String fecha, int hora, String comentarios) {
+    public Cita(String nombreCitaMascota, String fecha, String hora, String comentarios) {
         this.nombreCitaMascota = nombreCitaMascota;
         this.fecha = fecha;
         this.hora = hora;
